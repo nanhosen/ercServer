@@ -1,0 +1,46 @@
+https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
+
+docker compose:
+	start container: docker-compose up -d
+	start and build container: docker-compose up -d --build
+	stop and remove images and volumes: docker-compose down -v --rmi all
+	inspect logs of docker compose network: docker-compose logs
+
+docker: 
+	build image from Dockerfile: docker build -t nanhosen/<name of whatever>
+	run image: docker run -d -p <port # on host OS>:<exposed port from Dockerfile> nanhosen/<image-name> 
+
+list all docker images
+	docker images
+
+list all running containers
+	docker ps -a
+
+stop container:
+	docker stop <container id>
+
+remove container (after stopping):
+	docker rm <container id>
+
+remove container without stopping:
+	docker rm <container id> -f
+
+remove all containers after stopping:
+	docker rm $(docker ps -a) 
+
+remove image:
+	docker rmi <image id>
+
+remove all images
+	docker rmi $(docker images -a -q)
+
+
+inspect logs in running container:
+	docker logs <container id>
+
+get inside running ubuntu/centos container
+	docker exec -it <container id> /bin/bash
+
+get inside running alpine linux container
+	docker exec -it <container id> /bin/sh
+
