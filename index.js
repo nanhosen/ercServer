@@ -49,9 +49,9 @@ const app = new Koa();
 var router = new Router();
 
 
-router.get('/day1', serve('./data', { index: 'day2.json' }));
-router.get('/day2', serve('./data', { index: 'day1.json' }));
-router.get('/day3', serve('./data', { index: 'day0.json' }));
+router.get('/day1', serve('./data', { index: 'day1.json' }));
+router.get('/day2', serve('./data', { index: 'day2.json' }));
+router.get('/day3', serve('./data', { index: 'day3.json' }));
 
 // router.get('/',requireAuth, async (ctx) => {
 // 	ctx.body({"message": "this is a secret code"})
